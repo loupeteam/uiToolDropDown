@@ -21,7 +21,11 @@
 }
 $(document).on({
     'click': function (e) {
-        $(this).closest('.dropup, .dropdown').find('.selected-item').text($(this).text());
+        let item = $(this).closest('.dropdown-menu').siblings('.selected-item')
+        item.text($(this).text());
+        item.val($(this).text());
+        e.stopPropagation()
+        e.preventDefault();
     }
 }, '.dropdown-menu .dropdown-item')
 
