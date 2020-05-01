@@ -1,0 +1,26 @@
+.dropdown-btn-group{
+    padding: 0px;
+}
+
+.btn-dropdown-menu{
+    padding: 0px;
+    margin: 0px;
+    background: inherit;
+    max-height: 300px;
+}
+.dropdown-btn{
+    height: 100%;
+    width: 100%;
+}
+.dropdown-item{
+    margin: 3px;
+    display: block;
+}
+.dropdown-submenu{
+    display: inline-block;
+}
+.dropright>.dropdown-menu{
+    left: 80%;
+    top: auto;
+    bottom: 50%;
+}
