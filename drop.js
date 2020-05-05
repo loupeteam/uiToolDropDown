@@ -22,8 +22,15 @@
 $(document).on({
     'click': function (e) {
         let item = $(this).closest('.dropdown-menu').siblings('.selected-item')
-        item.text($(this).text());
-        item.val($(this).text());
+        let text = item.find('.selected-item-text')
+        if( text.length ){
+            text.text($(this).text());
+            text.val($(this).text());    
+        }
+        else{
+            item.text($(this).text());
+            item.val($(this).text());    
+        }
         e.stopPropagation()
         e.preventDefault();
     }
@@ -51,12 +58,12 @@ $(document).on({
 $(document).on({
     'click': function (e) {
         var container = $(this);
-        if (container.is(e.target)) {
+        if (container.is(e.target) || container.has(e.target).length) {
             p = $(e.target).closest(".dropup, .dropdown")
             p.toggleClass('open');
             e.stopPropagation();
             e.preventDefault();
-        }
+        } 
     }
 }, "[data-toggle='dropdownsub']");
 
